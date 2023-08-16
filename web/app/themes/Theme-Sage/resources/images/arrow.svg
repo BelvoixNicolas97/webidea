@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="arrow-right-icon"
+   width="16.200001"
+   height="16.200001"
+   viewBox="0 0 16.200001 16.200001"
+   version="1.1"
+   sodipodi:docname="arrow-right-icon.svg"
+   inkscape:version="1.3 (1:1.3+202307231459+0e150ed6c4)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="33.791667"
+     inkscape:cx="11.985203"
+     inkscape:cy="12"
+     inkscape:window-width="1920"
+     inkscape:window-height="1008"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="arrow-right-icon" />
+  <rect
+     id="Rectangle_31"
+     data-name="Rectangle 31"
+     width="24"
+     height="24"
+     fill="#49545d"
+     opacity="0"
+     x="0"
+     y="0" />
+  <path
+     id="Tracé_224"
+     data-name="Tracé 224"
+     d="M 16.123405,8.5225022 A 1.0063056,1.0061871 0 0 0 15.905036,7.4257582 L 8.8608969,0.38244859 A 1.0063056,1.0061871 0 0 0 7.4379807,1.8051971 L 12.765363,7.1319516 H 1.1063056 a 1.0063056,1.0061871 0 0 0 0,2.0123742 H 12.765363 L 7.438987,14.470074 a 1.0063056,1.0061871 0 1 0 1.4229162,1.422749 l 7.0441398,-7.04331 a 1.0063056,1.0061871 0 0 0 0.217362,-0.3270108 z"
+     fill="#49545d"
+     style="stroke-width:1.00625" />
+</svg>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="10"
+   height="7.1409998"
+   viewBox="0 0 10 7.1409998"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="check.svg"
+   inkscape:version="1.3 (1:1.3+202307231459+0e150ed6c4)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="81.1"
+     inkscape:cx="5"
+     inkscape:cy="5"
+     inkscape:window-width="1920"
+     inkscape:window-height="1008"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <g
+     id="Tracé_3050"
+     data-name="Tracé 3050"
+     transform="translate(32.728,-0.611)">
+    <path
+       id="Tracé_3051"
+       data-name="Tracé 3051"
+       d="m -28.753,7.752 a 1.06,1.06 0 0 1 -0.753,-0.314 l -3.222,-3.255 1.507,-1.5 2.468,2.494 4.518,-4.566 1.507,1.5 L -28,7.438 a 1.062,1.062 0 0 1 -0.753,0.314 z"
+       fill="#ffffff" />
+  </g>
+</svg>

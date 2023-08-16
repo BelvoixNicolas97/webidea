@@ -1,0 +1,213 @@
+@use "sass:color";
+
+#sectionNavigation {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    z-index: 99;
+
+    &>* {
+        background-color: $nuace-1;
+    }
+
+// Logo + burger
+    .bar {
+            display: -webkit-box;
+            display: -ms-flexbox;
+        display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+        flex-direction: row;
+            -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+        justify-content: space-between;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+        align-items: center;
+
+        padding: {
+            top: 5.55vh;
+            bottom: 2.96vh;
+        }
+
+        background-color: color.change($nuace-1, $alpha: 0);
+        border-bottom: 0rem solid $nuace-2;
+
+            -webkit-transition: background .25s, padding .25s;
+            -o-transition: background .25s, padding .25s;
+        transition: background .25s, padding .25s;
+
+        .logo {
+            img {
+                width: 23.7rem;
+
+                    -webkit-filter: brightness(0%) invert(100%);
+                filter: brightness(0%) invert(100%);
+
+                    -webkit-transition: -webkit-filter .10s .15s;
+                    transition: -webkit-filter .10s .15s;
+                    -o-transition: filter .10s .15s;
+                transition: filter .10s .15s;
+                    transition: filter .10s .15s, -webkit-filter .10s .15s;
+            }
+        }
+
+        #burger {
+            display: grid;
+
+            width: 6.4rem;
+            height: 6.4rem;
+
+            img {
+                grid-column: 1;
+                grid-row: 1;
+
+                height: 100%;
+                width: 100%;
+
+                    -o-object-fit: contain;
+                object-fit: contain;
+            }
+
+            #close {
+                opacity: 0;
+            }
+        }
+    }
+
+// Menu
+    nav {
+        display: grid;
+        grid-template-columns: repeat(2, calc(50% - (2vw / 2)));
+        grid-template-rows: 1fr;
+        grid-column-gap: 2vw;
+
+        position: absolute;
+        top: -100%;
+        left: 0;
+        right: 0;
+        padding: {
+            top: 5.55vh;
+            bottom: 6.48vh;
+        }
+        z-index: -1;
+
+        opacity: 0;
+
+            -webkit-transition: top .25s, opacity .30s;
+            -o-transition: top .25s, opacity .30s;
+        transition: top .25s, opacity .30s;
+    }
+
+// Ecran opaque 
+    &:after {
+        content: "";
+        display: block;
+        position: fixed;
+        top: 0;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        z-index: -2;
+
+        background-color: #00000000;
+
+            -webkit-transition: bottom 0s 1s, background .5s;
+            -o-transition: bottom 0s 1s, background .5s;
+        transition: bottom 0s 1s, background .5s;
+    }
+
+// Transition bar blanche
+    &.white .bar {
+        background-color: $nuace-1;
+        border-bottom: 0.1rem solid $nuace-2;
+
+        .logo img {
+                -webkit-filter: brightness(100%) invert(0%);
+            filter: brightness(100%) invert(0%);
+        }
+    }
+
+// Transition du menu
+    &.oppen {
+        &:after {
+            bottom: 0;
+    
+            background-color: #00000080;
+
+                -webkit-transition: background .5s;
+                -o-transition: background .5s;
+            transition: background .5s;
+        }
+
+        nav {
+            top: 100%;
+            opacity: 1;
+        }
+
+        .bar {
+            padding-left: 7.29vw !important;
+
+            #burger #close {
+                opacity: 1;
+            }
+        }
+    }
+
+// Version tablete 
+    @media (max-width: $tablet) {
+    // Logo + burger
+        .bar {
+            padding: {
+                top: 3.59vh;
+                bottom: 1.91vh;
+            }
+
+            .logo {
+                img {
+                    width: 14.6rem;
+                }
+            }
+
+            #burger {
+                width: 4.8rem;
+                height: 4.8rem;
+            }
+        }
+
+    // Menu
+        nav {
+            grid-template-columns: 100%;
+                grid-template-rows: repeat(2, minmax(-webkit-min-content, 1fr));
+            grid-template-rows: repeat(2, minmax(min-content, 1fr));
+            grid-row-gap: 4vh;
+
+            top: calc(-100vh + (4.8rem + 3.59vh + 1.91vh));
+
+            height: calc(100vh - (4.8rem + 3.59vh + 1.91vh));
+            padding: {
+                top: 3.59vh;
+                bottom: 4.18vh;
+            }
+
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+    // Ecran opaque 
+        &:after {
+            display: none;
+        }
+
+    // Transition du menu
+        &.oppen {
+            .bar {
+                padding-left: 4.48vw !important;
+            }
+        }
+    }
+}

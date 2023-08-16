@@ -1,0 +1,459 @@
+$error: #F44D2F;
+$warn: #f49f2f;
+$valid: #2ff449;
+
+#formContact {
+    position: relative;
+
+    legend {
+        display: none;
+    }
+
+// Error
+    &.error {
+        &:before {
+            content: "Une erreur c'est produit !";
+            display: block;
+
+            padding: 1.6rem;
+            border-radius: 0.3rem;
+
+            position: absolute;
+            top: 1.6rem;
+            left: 1.6rem;
+            right: 1.6rem;
+
+            @include corp;
+            text-align: center;
+            color: $nuace-1;
+
+            background-color: $error;
+        }
+
+        #inputSubmit button[type="submit"] {
+            background-color: $error !important;
+            color: $nuace-1 !important;
+        }
+    }
+
+// warn
+    &.warn {
+        &:before {
+            content: "Une erreur c'est produit sur le serveur !";
+            display: block;
+
+            padding: 1.6rem;
+            border-radius: 0.3rem;
+
+            position: absolute;
+            top: 1.6rem;
+            left: 1.6rem;
+            right: 1.6rem;
+
+            @include corp;
+            text-align: center;
+            color: $nuace-1;
+
+            background-color: $warn;
+        }
+
+        #inputSubmit button[type="submit"] {
+            background-color: $warn !important;
+            color: $nuace-1 !important;
+        }
+    }
+
+// valid
+    &.valid {
+        #inputSubmit button[type="submit"] {
+            background-color: $valid !important;
+            color: $nuace-1 !important;
+        }
+    }
+
+// Groupe input
+    fieldset {
+        display: grid;
+        grid-template-columns: repeat(2, 48.12%);
+        grid-row-gap: 1.6rem;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+        justify-content: space-between;
+
+    // Groupe input ident
+        &.ident {
+                grid-template-rows: repeat(2, -webkit-min-content);
+            grid-template-rows: repeat(2, min-content);
+            
+            padding-bottom: 3.0rem;
+
+            border-bottom: 0.1rem solid $nuace-2;
+        }
+
+    // Groupe input msg
+        &.msg {
+                grid-template-rows: -webkit-min-content 16.66vh -webkit-min-content;
+            grid-template-rows: min-content 16.66vh min-content;
+
+            padding-top: 3.0rem;
+
+            #inputTxt, #inputConsent {
+                grid-column: 1 / 3;
+            }
+        }
+
+    // input
+        label {
+                display: -webkit-box;
+                display: -ms-flexbox;
+            display: flex;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+            flex-direction: row;
+                -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+                -webkit-box-pack: start;
+                -ms-flex-pack: start;
+            justify-content: flex-start;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+            align-items: center;
+
+            padding: {
+                left: 1.6rem;
+                right: 1.6rem;
+            }
+
+            border: 0.1rem solid $nuace-3;
+            border-radius: 0.3rem;
+
+            cursor: text;
+
+        // input error
+            &.error {
+                border-color: #F44D2F !important;
+            }
+
+        // Titre input
+            .titre {
+                    width: -webkit-min-content;
+                    width: -moz-min-content;
+                width: min-content;
+                margin-right: 1.6rem;
+
+                @include corp-second;
+                color: $nuace-4;
+
+                span {
+                    font-size: 1.1rem;
+                }
+            }
+
+        // Input content
+            input, textarea {
+                width: 100%;
+                margin: {
+                    top: 1.6rem;
+                    bottom: 1.6rem;
+                }
+
+                font: normal normal normal 1.8rem Rubik;
+                color: $nuace-5;
+                outline: none;
+                resize: none;
+            }
+            &:has(textarea) {
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                flex-direction: column;
+                    -webkit-box-align: start;
+                    -ms-flex-align: start;
+                align-items: flex-start;
+
+                padding: 1.6rem;
+
+                textarea {
+                    height: 100%;
+                    margin: {
+                        top: 0.8rem;
+                        bottom: 0;
+                    }
+
+                    font-size: 2.0rem;
+                }
+            }
+            &#inputConsent {
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: reverse;
+                    -ms-flex-direction: row-reverse;
+                flex-direction: row-reverse;
+                    -webkit-box-pack: end;
+                    -ms-flex-pack: end;
+                justify-content: flex-end;
+                    -webkit-box-align: start;
+                    -ms-flex-align: start;
+                align-items: flex-start;
+
+                padding: 0;
+
+                border-color: transparent;
+
+                cursor: pointer;
+
+                .titre {
+                    width: 100%;
+                    margin: 0;
+                    margin-left: 1.0rem;
+
+                    font-size: 1.2rem;
+                    color: $nuace-5;
+                }
+
+                input {
+                    display: none;
+                }
+
+                &:after {
+                    content: "";
+                    display: block;
+    
+                    width: 1.6rem;
+                    height: 1.6rem;
+    
+                    border: 0.1rem solid $nuace-3;
+                    border-radius: 0.3rem;
+                    background-color: $nuace-1;
+                    background-size: 0.7rem 1.0rem;
+                    background-repeat: no-repeat;
+                    background-position: center;
+    
+                        -webkit-transition: background .10s;
+                        -o-transition: background .10s;
+                    transition: background .10s;
+                }
+    
+                &:has(input:checked):after {
+                    background-color: $blue-2;
+                    background-image: url("~@images/check.svg");
+                    border: none;
+                }
+            }
+        }
+    // Select
+        details {
+            position: relative;
+            padding: {
+                left: 1.6rem;
+                right: 1.6rem;
+            }
+
+            border: 0.1rem solid $nuace-3;
+            border-radius: 0.3rem;
+
+            outline: none;
+            list-style: none;
+
+        // Select error
+            &.error {
+                border-color: #F44D2F;
+            }
+
+        // Titre
+            summary {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                display: flex;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: row;
+                flex-direction: row;
+                    -ms-flex-wrap: nowrap;
+                flex-wrap: nowrap;
+                    -webkit-box-pack: start;
+                    -ms-flex-pack: start;
+                justify-content: flex-start;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                align-items: center;
+
+                list-style: none;
+                outline: none;
+                cursor: pointer;
+
+                .titre {
+                        width: -webkit-min-content;
+                        width: -moz-min-content;
+                    width: min-content;
+                    margin-right: 1.6rem;
+    
+                    @include corp-second;
+                    color: $nuace-4;
+                }
+
+                .value {
+                        -webkit-box-flex: 1;
+                        -ms-flex: 1;
+                    flex: 1;
+                    margin: {
+                        top: 1.6rem;
+                        bottom: 1.6rem;
+                    }
+    
+                    font: normal normal normal 1.8rem Rubik;
+                    overflow: hidden;
+                    white-space: nowrap;
+                        -o-text-overflow: ellipsis;
+                    text-overflow: ellipsis;
+                    color: $nuace-5;
+                }
+
+                &:after {
+                    content: "";
+                    display: block;
+
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    margin-left: 1.6rem;
+
+                    background-image: url('~@images/select.svg');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+
+                        -webkit-transition: -webkit-transform .25s;
+                        transition: -webkit-transform .25s;
+                        -o-transition: transform .25s;
+                        transition: transform .25s, -webkit-transform .25s;
+                    transition: transform .25s;
+                }
+            }
+            &[open] {
+                summary:after {
+                        -webkit-transform: rotate(180deg);
+                        -ms-transform: rotate(180deg);
+                    transform: rotate(180deg);
+                }
+            }
+
+        // Liste optien
+            ul {
+                position: absolute;
+                top: calc(100% - 0.1rem);
+                left: -0.1rem;
+                right: -0.1rem;
+
+                background: $nuace-1;
+                border: {
+                    left: 0.1rem solid $nuace-3;
+                    right: 0.1rem solid $nuace-3;
+                    bottom: 0.1rem solid $nuace-3;
+                }
+                border-bottom-left-radius: 0.3rem;
+                border-bottom-right-radius: 0.3rem;
+
+                overflow: hidden;
+
+                li {
+                        -webkit-transition: color .25s, background .25s;
+                        -o-transition: color .25s, background .25s;
+                    transition: color .25s, background .25s;
+
+                    &:hover {
+                        color: $nuace-1;
+                        background-color: $blue-2;
+                    }
+
+                    label {
+                        display: block;
+
+                        width: 100%;
+                        padding: {
+                            top: 0.8rem;
+                            bottom: 0.8rem;
+                        }
+                        border: none;
+                        border-radius: 0;
+
+                        overflow: hidden;
+                        white-space: nowrap;
+                            -o-text-overflow: ellipsis;
+                        text-overflow: ellipsis;
+
+                        cursor: pointer;
+                    }
+
+                    input {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+// Bouton submit
+    #inputSubmit {
+        margin-top: 3.0rem;
+
+        button[type="submit"] {
+            @include button-primaire;
+        }
+    }
+
+// Format tablette
+    @media (max-width: $tablet) {
+    // Groupe input
+        fieldset {
+            grid-template-columns: 100%;
+
+        // Groupe input ident
+            &.ident {
+                    grid-template-rows: repeat(4, -webkit-min-content);
+                grid-template-rows: repeat(4, min-content);
+            }
+
+        // Groupe input msg
+            &.msg {
+                    grid-template-rows: -webkit-min-content 26.98vh -webkit-min-content;
+                grid-template-rows: min-content 26.98vh min-content;
+            }
+
+        // input
+            label {
+            // Input content
+                input, textarea {
+                    margin: {
+                        top: 1.7rem;
+                        bottom: 1.7rem;
+                    }
+
+                    font-size: 1.6rem;
+                }
+                &:has(textarea) {
+                    textarea {
+                        margin: {
+                            top: 0.9rem;
+                        }
+
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+        // Select
+            details {
+            // Titre
+                summary {
+                    .value {
+                        margin: {
+                            top: 1.7rem;
+                            bottom: 1.7rem;
+                        }
+        
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+}

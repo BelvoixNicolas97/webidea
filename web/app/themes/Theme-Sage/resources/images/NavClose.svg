@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <g id="Nav" transform="translate(-1656 36)">
+    <circle id="bg" cx="32" cy="32" r="32" transform="translate(1656 -36)" fill="#009dea"/>
+    <g id="x-icon" transform="translate(1672 -20)">
+      <rect id="Rectangle_75" data-name="Rectangle 75" width="32" height="32" fill="#fff" opacity="0"/>
+      <path id="Tracé_445" data-name="Tracé 445" d="M16.219,14.333l7.057-7.057a1.333,1.333,0,0,0-1.885-1.885l-7.057,7.057L7.276,5.391A1.333,1.333,0,0,0,5.391,7.276l7.057,7.057L5.391,21.391a1.333,1.333,0,1,0,1.885,1.885l7.057-7.057,7.057,7.057a1.333,1.333,0,0,0,1.885-1.885Z" transform="translate(1.667 1.667)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

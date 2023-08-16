@@ -1,0 +1,43 @@
+#sectionContact {
+    display: grid;
+    grid-template-columns: 28.44% 59.1%;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+    justify-content: space-between;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+    align-items: start;
+
+// content
+    .main {
+        grid-column: 1;
+        grid-row: 1;
+
+        h2 {
+            margin-bottom: 2.8rem;
+
+            span {
+                display: block;
+
+                width: 100%;
+                margin-bottom: 0.6rem;
+
+                font: normal normal bold 1.2rem Rubik;
+                letter-spacing: 0.12rem;
+                color: $blue-2;
+            }
+        }
+
+        .content {
+            color: $nuace-4;
+        }
+    }
+
+// Format tablette
+    @media (max-width: $tablet) {
+        grid-template-columns: 100%;
+            grid-template-rows: -webkit-min-content auto;
+        grid-template-rows: min-content auto;
+        grid-row-gap: 3.7rem;
+    }
+}

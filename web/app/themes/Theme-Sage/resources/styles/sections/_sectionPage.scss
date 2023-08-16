@@ -1,0 +1,260 @@
+#sectionPage {
+    display: grid;
+    grid-template-columns: 53.62% 35.08%;
+    grid-template-rows: auto;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+    justify-content: space-between;
+
+// Content
+    .main {
+        .titre {
+            margin-bottom: 2.8rem;
+
+            span {
+                display: inline-block;
+
+                width: 100%;
+                margin-bottom: 0.6rem;
+
+                font: normal normal bold 1.2rem Rubik;
+                letter-spacing: 0.12rem;
+                color: $blue-2;
+            }
+        }
+
+        .content {
+            margin-bottom: 4.0rem;
+
+            color: $nuace-4;
+
+            &>* {
+                margin-bottom: 2.0rem;
+
+                &:last-child {
+                    margin-bottom: 0rem;
+                }
+            }
+
+            ul {
+                margin-left: 1.0rem;
+
+                li {
+                    position: relative;
+                    padding-left: 1.8rem;
+                    margin-bottom: 1.2rem;
+
+                    &:last-child {
+                        margin-bottom: 0rem;
+                    }
+
+                    &:before {
+                        content: "";
+                        display: inline-block;
+                        height: 0.8rem;
+                        width: 0.8rem;
+
+                        position: absolute;
+                        top: calc((2.0rem / 2) - (0.8rem / 2));
+                        left: 0;
+
+                        background-image: url('~@images/disc-list.svg');
+                        background-size: contain;
+                    }
+                }
+            }
+        }
+
+        .link {
+            @include link;
+
+            &:after {
+                content: "";
+                display: inline-block;
+                width: 1.6rem;
+                height: 1.6rem;
+                margin-left: 1.6rem;
+
+                background-image: url('~@images/arrow.svg');
+                background-size: contain;
+
+                    -webkit-transition: background .10s, margin .10s;
+                    -o-transition: background .10s, margin .10s;
+                transition: background .10s, margin .10s;
+            }
+
+            &:hover:after {
+                margin-left: calc(1.6rem + 1.6rem);
+
+                background-image: url('~@images/arrow-blue.svg');
+            }
+
+            &:active:after {
+                background-image: url('~@images/arrow.svg');
+            }
+
+            &.disabled:after {
+                background-image: url('~@images/arrow-gray.svg');
+            }
+        }
+    }
+
+// Image
+    .imgHeader {
+        height: 100%;
+        width: 100%;
+
+    // Avec asset
+        &:has(.asset) {
+            position: relative;
+
+            img {
+                position: absolute;
+                    -o-object-fit: contain;
+                object-fit: contain;
+                height: auto;
+
+                &:first-child {
+                    right: 0;
+                    bottom: 0;
+                    z-index: 1;
+
+                    width: 80.28%;
+                    height: 91.35%;
+                }
+
+                &:last-child {
+                    top: 0;
+                    left: 0;
+
+                    width: 51.33%;
+                    height: 91.17%;
+                }
+            }
+        }
+
+    // Sans asset
+        &:not(:has(.asset)) {
+            img {
+                height: 100%;
+                width: 100%;
+                    -o-object-fit: cover;
+                object-fit: cover;
+            }
+        }
+    }
+
+// Element impaire
+    &:nth-child(2n+1) {
+    // Content
+        .main {
+            margin: {
+                top: 32.56%;
+                bottom: 13.56%;
+            }
+        }
+    }
+
+// Element paire
+    &:nth-child(2n+0) {
+    // Content
+        .main {
+            grid-column: 2;
+            grid-row: 1;
+
+            margin: {
+                top: 5.42%;
+                bottom: 12.21%;
+            }
+        }
+
+    // Image
+        .imgHeader {
+            grid-column: 1;
+            grid-row: 1;
+        }
+    }
+
+// Version tablete 
+    @media (max-width: $tablet) {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+
+    // Content
+        .main {
+            grid-column: 1 !important;
+            grid-row: 1 !important;
+
+            margin: {
+                top: 0 !important;
+                bottom: 8.99vh !important;
+            }
+
+            .titre {
+                margin-bottom: 1.4rem;
+            }
+
+            .content {
+                margin-bottom: 3.0rem;
+
+                ul {
+                    li {
+                        padding-left: 1.6rem;
+
+                        &:before {
+                            height: 0.6rem;
+                            width: 0.6rem;
+
+                            top: calc((1.6rem / 2) - (0.6rem / 2));
+                        }
+                    }
+                }
+            }
+
+            .link {
+
+                &:after {
+                    width: 1.0rem;
+                    height: 1.0rem;
+                    margin-left: 1.3rem;
+
+                        -webkit-transition: background .10s, margin .10s;
+                        -o-transition: background .10s, margin .10s;
+                    transition: background .10s, margin .10s;
+                }
+
+                &:hover:after {
+                    margin-left: calc(1.0rem + 1.3rem);
+                }
+            }
+        }
+
+    // Image
+        .imgHeader {
+            grid-column: 1 !important;
+            grid-row: 2 !important;
+
+        // Avec asset
+            &:has(.asset) {
+                height: 41.37vh;
+
+                img {
+                    &:first-child {
+                        width: 100%;
+                        height: 99.99%;
+                    }
+
+                    &:last-child {
+                        width: 63.80%;
+                        height: 80.07%;
+                    }
+                }
+            }
+
+        // Sans asset
+            &:not(:has(.asset)) {
+                height: 58.01vh;
+            }
+        }
+    }
+}

@@ -1,0 +1,254 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+// Variable color
+    $nuace-1: #FFFFFF;
+    $nuace-2: #EEEEEE;
+    $nuace-3: #dddddd;
+    $nuace-4: #7F878D;
+    $nuace-5: #49545D;
+
+    $blue-1: #64CEFF;
+    $blue-2: #009DEA;
+    $blue-3: #006FB7;
+
+// Variable ecran
+    $mobile: 480px;
+    $tablet: 768px;
+    $laptop: 1024px;
+
+// Typographies
+    @font-face {
+        font-family: "Rubik";
+        src: url("~@fonts/Rubik/Rubik-VariableFont_wght.ttf") format('truetype'),
+            url("~@fonts/Rubik/Rubik-Italic-VariableFont_wght.ttf") format('truetype');
+    }
+    
+    @mixin h1 {
+        color: $nuace-5;
+        letter-spacing: 0px;
+        font: normal normal 300 6.4rem Rubik;
+
+        span {
+            display: block;
+
+            width: 100%;
+
+            font-weight: bold;
+
+            &:after {
+                content: ".";
+                display: inline;
+
+                color: $blue-2;
+            }
+        }
+
+        @media (max-width: $tablet) {
+            font-size: 3.2rem;
+        }
+    }
+    @mixin h2 {
+        color: $nuace-5;
+        letter-spacing: 0px;
+        font: normal normal 300 4.8rem Rubik;
+
+        @media (max-width: $tablet) { 
+            font-size: 2.8rem;
+        }
+    }
+    @mixin h3 {
+        color: $nuace-5;
+        letter-spacing: 0px;
+        font: normal normal 300 3.2rem Rubik;
+
+        @media (max-width: $tablet) { 
+            font-size: 2.4rem;
+        }
+    }
+    @mixin h4 {
+        color: $nuace-5;
+        letter-spacing: 0px;
+        font: normal normal bold 2.4rem Rubik;
+
+        @media (max-width: $tablet) { 
+            font-size: 2.0rem;
+        }
+    }
+    @mixin corp {
+        font: normal normal normal 2.0rem Rubik;
+        letter-spacing: 0px;
+        color: $nuace-5;
+
+        @media (max-width: $tablet) { 
+            font-size: 1.6rem;
+        }
+    }
+    @mixin corp-second {
+        font: normal normal normal 1.4rem Rubik;
+        letter-spacing: 0px;
+        color: $nuace-5;
+    }
+
+    html {
+        font-size: 62.5%;
+    }
+    h1 {
+        @include h1;
+    }
+    h2 {
+        @include h2;
+    }
+    h3 {
+        @include h3;
+    }
+    h4 {
+        @include h4;
+    }
+    body {
+        @include corp;
+    }
+
+// bouton
+    @mixin button-primaire {
+        background-color: $blue-2;
+        border-radius: 0.3rem;
+
+        padding: 1.6rem 4.0rem;
+        text-align: center;
+        font: normal normal bold 2.0rem Rubik;
+        letter-spacing: 0px;
+        color: $nuace-1;
+
+            -webkit-transition: background .10s, color .10s;
+            -o-transition: background .10s, color .10s;
+        transition: background .10s, color .10s;
+
+        &:hover {
+            background-color: $blue-3;
+        }
+
+        &:active {
+            background-color: $blue-2;
+
+                -webkit-transition: background .10s;
+                -o-transition: background .10s;
+            transition: background .10s;
+        }
+
+        &:disabled {
+            background-color: $nuace-2;
+            color: $nuace-5;
+
+            cursor: not-allowed;
+        }
+
+        @media (max-width: $tablet) { 
+            font-size: 1.8rem;
+        }
+    }
+    @mixin button-second {
+        background-color: $nuace-2;
+        border-radius: 0.3rem;
+
+        padding: 1.6rem 4.0rem;
+        text-align: center;
+        font: normal normal bold 2.0rem Rubik;
+        letter-spacing: 0px;
+        color: $nuace-5;
+
+            -webkit-transition: background .10s, color .10s;
+            -o-transition: background .10s, color .10s;
+        transition: background .10s, color .10s;
+
+        &:hover {
+            background-color: $nuace-3;
+        }
+
+        &:active {
+            background-color: $nuace-2;
+
+                -webkit-transition: background .10s;
+                -o-transition: background .10s;
+            transition: background .10s;
+        }
+
+        &:disabled {
+            background-color: $nuace-2;
+            color: $nuace-5;
+
+            cursor: not-allowed;
+        }
+
+        @media (max-width: $tablet) { 
+            font-size: 1.8rem;
+        }
+    }
+    @mixin link {
+        font: normal normal bold 2.0rem Rubik;
+        letter-spacing: 0px;
+        color: $nuace-5;
+
+            -webkit-transition: color .10s;
+            -o-transition: color .10s;
+        transition: color .10s;
+
+        &:hover {
+            color: $blue-2;
+        }
+
+        &:active {
+            color: $nuace-5;
+        }
+
+        &:disabled, &.disabled {
+            color: $nuace-3;
+
+            cursor: not-allowed;
+        }
+
+        @media (max-width: $tablet) { 
+            font-size: 1.6rem;
+        }
+    }
+
+// app
+    #app {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100vh auto auto;
+
+        main section, header, footer, #sectionNavigation>* {
+            padding: {
+                left: 10.41vw;
+                right: 10.41vw;
+            }
+        }
+
+        @media (max-width: $tablet) {
+            main section, header, footer, #sectionNavigation>* {
+                padding: {
+                    left: 6.39vw;
+                    right: 6.66vw;
+                }
+            }
+        }
+    }
+
+// Layout
+    @import '@styles/layouts/_page';
+
+// Section
+    @import '@styles/sections/_navigation';
+    @import '@styles/sections/_header';
+    @import '@styles/sections/_sectionPage';
+    @import '@styles/sections/_listArticles';
+    @import '@styles/sections/_contact';
+    @import '@styles/sections/_footer';
+
+// partiels
+    @import '@styles/partials/_navigation-items';
+
+// Fom
+    @import '@styles/forms/_contact';

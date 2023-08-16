@@ -1,0 +1,46 @@
+#layoutPage {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-rows: auto;
+    grid-row-gap: 14.8vh;
+
+    padding: {
+        bottom: 13.32vh;
+    }
+
+    background-color: $nuace-1;
+
+    &>*:first-child {
+        margin-top: -8.78vh;
+    }
+
+    #sectionPage {
+        padding-right: 17.10vw;
+    }
+    #sectionContact {
+        padding: {
+            left: 17.10vw;
+            right: 17.10vw;
+        }
+    }
+
+    @media (max-width: $tablet) {
+        grid-row-gap: 17.99vh;
+    
+        padding: {
+            top: 17.99vh;
+            bottom: 15.59vh;
+        }
+
+        &>*:first-child {
+            margin-top: 0;
+        }
+
+        #sectionContact, #sectionPage {
+            padding: {
+                left: 6.39vw;
+                right: 6.66vw;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <g id="Nav" transform="translate(-1656 14)">
+    <circle id="bg" cx="32" cy="32" r="32" transform="translate(1656 -14)" fill="#009dea"/>
+    <g id="menu-icon" transform="translate(1672 2)">
+      <rect id="Rectangle_30" data-name="Rectangle 30" width="32" height="32" fill="#fff" opacity="0"/>
+      <g id="Groupe_2929" data-name="Groupe 2929" transform="translate(2.667 14.667)">
+        <path id="Tracé_221" data-name="Tracé 221" d="M27.333,13.667h-24a1.333,1.333,0,0,1,0-2.667h24a1.333,1.333,0,1,1,0,2.667Z" transform="translate(-2 -11)" fill="#fff"/>
+      </g>
+      <g id="Groupe_2930" data-name="Groupe 2930" transform="translate(2.667 6.667)">
+        <path id="Tracé_222" data-name="Tracé 222" d="M27.333,7.667h-24A1.333,1.333,0,0,1,3.333,5h24a1.333,1.333,0,1,1,0,2.667Z" transform="translate(-2 -5)" fill="#fff"/>
+      </g>
+      <g id="Groupe_2931" data-name="Groupe 2931" transform="translate(2.667 22.667)">
+        <path id="Tracé_223" data-name="Tracé 223" d="M27.333,19.667h-24a1.333,1.333,0,1,1,0-2.667h24a1.333,1.333,0,1,1,0,2.667Z" transform="translate(-2 -17)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

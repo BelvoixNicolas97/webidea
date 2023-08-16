@@ -1,0 +1,210 @@
+@use "sass:color";
+
+#sectionFooter {
+    display: grid;
+    grid-template-columns: 14.84% 49.07% 15.13%;
+    grid-template-rows: repeat(2, auto);
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+    justify-content: space-between;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+    align-items: start;
+
+    padding: {
+        top: 6.0rem;
+        bottom: 6.0rem;
+    }
+
+    background-color: $blue-3;
+
+// Logo
+    .logo {
+        grid-column: 1 / 2;
+        grid-row: 1 / -1;
+
+        img {
+                -webkit-filter: brightness(0%) invert(100%);
+            filter: brightness(0%) invert(100%);
+        }
+    }
+
+// Menus
+    &>.link {
+        display: grid;
+        grid-template-columns: repeat(3, 27.61%);
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+        justify-content: space-between;
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+        align-items: start;
+
+        padding-bottom: 2.1rem;
+
+        border-bottom: 0.1rem solid color.change($nuace-1, $alpha: 0.3);
+
+        #reseaux {
+            a {
+                color: $blue-1;
+                font-weight: bold;
+
+                &:hover {
+                    color: $nuace-1;
+                }
+            }
+        }
+
+        .item {
+            margin-bottom: 1.0rem;
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            a {
+                @include link;
+                display: block;
+    
+                width: 100%;
+    
+                font-size: 1.4rem;
+                font-weight: normal;
+                color: $nuace-1;
+            }
+        }
+    }
+
+// Contact
+    .contact {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+
+        &>* {
+            display: block;
+
+            width: 100%;
+            margin-bottom: 1.0rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        h2 {
+            font: normal normal bold 1.4rem Rubik;
+            color: $nuace-1;
+        }
+
+        a {
+            @include link;
+
+            font-size: 1.4rem;
+            font-weight: normal;
+            color: $nuace-1;
+
+            &.mail {
+                color: $blue-1;
+                font-weight: bold;
+
+                &:hover {
+                    color: $nuace-1;
+                }
+            }
+        }
+    }
+
+// Lien sub footer
+    .subFooter {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+
+        margin-top: 2.0rem;
+
+        .copyright {
+            font: normal normal normal 1.4rem Rubik;
+            color: $nuace-1;
+        }
+
+        .link {
+            margin-top: 0.5rem;
+
+            a {
+                @include link;
+
+                padding: 0 1.0rem;
+
+                font-size: 1.4rem;
+                font-weight: normal;
+                color: $nuace-1;
+
+                &:first-child {
+                    padding-left: 0;
+                    border-right: 0.1rem solid $nuace-1;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+
+// Version tablete 
+    @media (max-width: $tablet) {
+        grid-template-columns: 27.69% 63.99%;
+
+        padding: {
+            top: 4.0rem;
+            bottom: 4.0rem;
+        }
+
+    // Logo
+        .logo {
+            display: none;
+        }
+
+    // Menus
+        &>.link {
+            grid-template-columns: 100%;
+
+            padding-bottom: 3.0rem;
+
+            border-bottom: none;
+
+            #menu_1, #menu_2 {
+                display: none;
+            }
+
+            .item {
+                margin-bottom: 1.2rem;
+
+                a {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+
+    // Contact
+        .contact {
+            grid-column: 2 / 3;
+
+            width: 100%;
+            margin-bottom: 3.0rem;
+
+            h2, a {
+                text-align: end;
+            }
+        }
+
+    // Lien sub footer
+        .subFooter {
+            grid-column: 1 / 3;
+
+            padding-top: 3.0rem;
+            margin: 0;
+
+            border-top: 0.1rem solid color.change($nuace-1, $alpha: 0.3);
+        }
+    }
+}
